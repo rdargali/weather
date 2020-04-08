@@ -49,7 +49,7 @@ const App = () => {
           <div className="date">{dateBuilder(new Date())}</div>
         </div>
         <div className="weather-box">
-          <div className="temp">something degrees</div>
+          <div className="temp">69</div>
           <div className="weather">Sunny</div>
         </div>
       </main>
