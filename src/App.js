@@ -17,7 +17,6 @@ const App = () => {
         .then((results) => {
           setWeather(results.data);
           setQuery("");
-          console.log(weather);
         });
     }
   };
@@ -56,8 +55,20 @@ const App = () => {
     return `${day} ${date} ${month} ${year}`;
   };
 
+  let backgroundClass;
+
+  if (typeof weather.main !== "undefined") {
+    if (weather.main.temp > 55) {
+      backgroundClass = "App warm";
+    } else {
+      backgroundClass = "App cold";
+    }
+  } else {
+    backgroundClass = "App";
+  }
+
   return (
-    <div className="App">
+    <div className={backgroundClass}>
       <main>
         <div className="search-box">
           <input
